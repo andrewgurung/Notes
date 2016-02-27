@@ -1,15 +1,15 @@
 
-### Author Info
+Author Info
 -----------
 Author: Andrew Gurung <br>
 URL: http://andrewgurung.github.io/
 
-### Context
+Context
 -------
 The Two Pillars of JavaScript: Prototypal Inheritance <br>
 By Eric Elliott
 
-## Notes
+Notes
 -----
 
 ## The two pillars of JavaScript:
