@@ -116,7 +116,20 @@ Notes
 - Mix and match all three types of Prototypes
 - Use `call()` or `apply()` to swap out source prototype at instantiation
 
-### stamp{it}
+### stamp{it} Library
 - Stamps allow you to inherit easily from multiple ancestors by composing multiple source stamps
 - URL: https://github.com/stampit-org/stampit
 - Stampit uses three different kinds of prototypal OO
+- Specify which prototypes to use:
+  - `.methods()` for delegation
+  - `.state()` for cloning/concatenation
+  - `.enclose()` for functional data/privacy
+
+> Favor object composition over class inheritance. Program to an interface, not an implementation. ~ Gang of Four
+
+### Good code is simple
+
+- As you strip out constructors and classical inheritance from JavaScript, it gets simpler, more flexible and more powerful.
+- Classes deal with the idea of objects
+- Prototypes deal with the objects themselves
+- Google con
