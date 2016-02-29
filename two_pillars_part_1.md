@@ -132,4 +132,3 @@ Notes
 - As you strip out constructors and classical inheritance from JavaScript, it gets simpler, more flexible and more powerful.
 - Classes deal with the idea of objects
 - Prototypes deal with the objects themselves
-- Google con
