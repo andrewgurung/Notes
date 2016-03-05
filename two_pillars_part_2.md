@@ -63,3 +63,33 @@ console.log(filterOutput); // [3, 4, 5]
 var reducedOutput = input.reduce( (n, el) => n + el );
 console.log( reducedOutput ); // 15
 ```
+
+### List as Generic Interface
+- Doing a ton of functional programming, you might see virtually everything as a `list`
+- An `element` of a `list`
+- A `predicate` used to test `list`
+- `Transformation` based on `list`
+- `Generics` are functions that can work with different data types
+- `Lifting` is the process of changing a function that works with single data type to one that works with multiple data types
+
+### Reactive Programming
+- Reactive programming uses functional utilities like map, filter and reduce to create and process data flows
+  - When input `x` changes, output `y` updates automatically in response. Hence `reactive`
+- Data dependencies are specified in a declarative fashion so that most of the heavy lifting is done by the functional utilities
+- Every list is a stream
+- A stream is just a list expressed over time
+- A button is a stream of clicks
+- In Rx (reactive extensions), you create `observable streams` which are then process by functional utilities
+
+### Better Async
+- A `promise` object is a placeholder that represents a future value that may not be available yet
+- `Promises` are how a function call says, "Here's an event listener to be notified when I complete or fail"
+- `Promise` is a stream that emits only a single value (or rejection)
+- `Observables` can replace promise to emit stream which can access all functional utilities
+
+Consider:
+
+```js
+// When future stock prices are available, then become millionaire
+fetchFutureStockPrices().then(becomeAMillionaire);
+```
