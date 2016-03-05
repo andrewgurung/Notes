@@ -33,12 +33,33 @@ Pure functions have a few properties that make that extremely reusable and usefu
 
 1. Idempotence:  
    - Given the same inputs, a `pure function` will always return the same result, regardless of the number of times the function is called
-   - Idempotence is an important feature for building RESTful web services
-   - Valuable for parallel and distributed computation (horizontal scaling)
-   - Great for working with continous data sets
+   - Important feature for building RESTful web services
+   - Parallel and distributed computation (horizontal scaling)
+   - Works great with continous data sets
 2. Free from side-effects:  
    - Do not mutate any shared state or mutable arguments
-   - Other than the return value, they don't produce any observable output including thrown exceptions, logs, console, display, I/O devices etc.
-   - Less likely to conflict with other programs or cause bugs
    - Stronger guarantees of encapsulation
-   - 
+   - Function purity is FP’s answer to the gorilla/banana problem from OOP
+
+Note: Complex programs that need to produce output cannot be composed using `only` pure functions. But where ever possible **USE** `pure functions`
+
+### Working in Functional Programming (FP)
+- Functional Programming provides several kinds of functions that are extremely usuable
+- Haskell is a more popular FP, but you will find functions similar to it in several JavaScript libraries
+- Some utilities from Haskell documentation:
+  - head(), last(), equal(), map(), filter(), reduce(), loop() etc
+
+Some of these common utilities got added to JavaScript:
+
+```js
+// (..) =>  is equivalent to function(..) {..}
+var input = [1, 2, 3, 4, 5];
+var mapOutput = input.map( (n) => n + 1 );
+console.log( mapOutput );  // [2, 3, 4, 5, 6]
+
+var filterOutput = input.filter( (n) => n >= 3 && n <= 5 );
+console.log(filterOutput); // [3, 4, 5]
+
+var reducedOutput = input.reduce( (n, el) => n + el );
+console.log( reducedOutput ); // 15
+```
