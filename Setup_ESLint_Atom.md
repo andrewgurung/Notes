@@ -42,3 +42,95 @@
 		  }
 	}
 	```
+
+Common ESLint errors
+#indent (Enforce consistent indentation and tab spacing)
+
+	Solution: Use beautify to fix the indentation
+	1) On the Atom Editor --> Project Explorer --> Right click on a file --> Beautify file
+			Or
+	2) Open a file in Atom Editor --> Right click anywhere inside the open file --> Beautify Editor Contents
+
+#quotes
+	"jqgrid"
+
+	Solution: doublequote to singlequote
+	'jqgrid'
+
+#func-names (Require Function Expressions to have a Name)
+$.each(recordsToDelete, function() {
+  expGrid.jqGrid('delRowData', recordsToDelete[i]);
+  i++;
+});
+
+Solution: Use Arrow functions
+$.each(recordsToDelete, () => {
+  expGrid.jqGrid('delRowData', recordsToDelete[i]);
+  i++;
+});
+	
+#max-len
+	import { post, postJson, showFetchError, fetchJson, fetchText, validSession } from "./../../util/vsacFetch";
+
+	Solution:
+	Either break down to multiple lines
+	Or Add ignore case in .eslintrc config file
+
+#no-var
+	var collabDetailsValueSets;
+
+	Solution:
+	Convert to let or const
+
+#object-shorthand
+	loadComplete: function() { $('#cb_myCollabSiteTable').hide(); },
+
+	Solution: Use ES6 method shorthand
+	loadComplete() { $('#cb_myCollabSiteTable').hide(); },
+
+#property-shorthand
+	url: url
+
+	Solution
+	url
+
+#key-spacing
+	multiselect : true,
+
+	Solution: Remove extra space after multiselect
+	multiselect: true;
+
+#prefer-const
+	let cm = $(this).jqGrid('getGridParam','colModel');
+
+	Solution: cm is never reassigned so convert to const
+	const cm = $(this).jqGrid('getGridParam','colModel');
+
+
+#no-use-before-define
+	viewCollabDetails(siteID);
+
+	Solution:
+	Move function declaration to top
+
+#space-before-blocks
+	if(siteSeq === null)
+
+	Solution:
+	if (siteSeq === null)
+
+#func-names
+	$('#collabContainer').bind('loadMyCollabSites', function(e, arg) {
+
+	Solution: Require Function Expressions to have a Name
+	$('#collabContainer').bind('loadMyCollabSites', function loadMyCollabSites(e, arg) {
+
+#no-shadow
+	The variable a inside of b() is shadowing the variable a in the global scope:
+	var a = 3;
+	function b() {
+		var a = 10;
+	}
+
+	Solution:
+	Define different name to avoid shadowing
