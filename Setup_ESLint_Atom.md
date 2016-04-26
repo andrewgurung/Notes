@@ -57,18 +57,6 @@ Common ESLint errors
 	Solution: doublequote to singlequote
 	'jqgrid'
 
-#func-names (Require Function Expressions to have a Name)
-$.each(recordsToDelete, function() {
-  expGrid.jqGrid('delRowData', recordsToDelete[i]);
-  i++;
-});
-
-Solution: Use Arrow functions
-$.each(recordsToDelete, () => {
-  expGrid.jqGrid('delRowData', recordsToDelete[i]);
-  i++;
-});
-	
 #max-len
 	import { post, postJson, showFetchError, fetchJson, fetchText, validSession } from "./../../util/vsacFetch";
 
