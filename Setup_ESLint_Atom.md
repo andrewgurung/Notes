@@ -122,3 +122,9 @@ Common ESLint errors
 
 	Solution:
 	Define different name to avoid shadowing
+
+#prefer-template ()
+	urls.suspendScheduleURL+"?ver="+$("#expVersionText").val()+"&user="+app.getUser()
+	
+	Solution: Use ES6 template literals instead of string concatenation `${..}` enclosed in back tick marks 
+	`${urls.suspendScheduleURL}?ver=${$('#expVersionText').val()}&user=${app.getUser()}`
